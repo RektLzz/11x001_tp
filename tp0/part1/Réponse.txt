@@ -1,0 +1,6 @@
+Exercie 1 :
+
+Le "x" est une variable contenant un nombre représenté ici généralement sous forme de int ou float (peut aussi avoir des doubles, etc.)
+Lorsque l'on fait l'opération : x = x + 1, on affecte la valeur de x, qui était notre nombre à la valeur de ce nombre plus un.
+Ceci veut dire que si notre variable x était par exemple 2.4, alors après l'opération x serait 3.4 (et similairement avec les autres examples).
+L'opération a donc pour effet d'ajouter à notre variable un à sa valeur.
