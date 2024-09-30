@@ -5,7 +5,6 @@ Université de Genève, cours [11X001 Introduction à la Programmation des Algor
 
 ---
 
-
 ## Consignes générales (pour tous les TD)
 
 - La **consigne** de chaque exercice est dans le fichier `README.md`. Les **TODO** indiquent des consignes à suivre.
@@ -20,7 +19,7 @@ Université de Genève, cours [11X001 Introduction à la Programmation des Algor
 /******************** Votre code ci-dessus *********************/
 ```
 
-- Pour compiler et exécuter votre programme, appuyer sur le bouton **Run** vert en haut de la page, ou faites **Ctrl + Entrée**. 
+- Pour compiler et exécuter votre programme, vous pouvez taper `clang <nom_fichier>.c -o <nom_executable>` puis `./<nom_executable>`. 
 - Les **solutions** seront fournies une semaine après le TD. 
 
 
@@ -29,7 +28,7 @@ Université de Genève, cours [11X001 Introduction à la Programmation des Algor
 
 ## Exercice 1
 
-L'exercice 1 est déjà implémenté (exécuter en cliquant sur `Run`), il affiche simplement :  
+L'exercice 1 est déjà implémenté, il affiche simplement :  
 
 ```
 Bonjour monde !
@@ -122,7 +121,7 @@ scanf("%f", &radius);  // lecture de la valeur entrée par l'utilisateur
 
 ## Exercice 6
 
-**TODO** : Calculer son âge en jours et stocker le résultat dans la variable `age_in_day`. Pour faire simple, on ignore les années bissextiles et on considère qu'un mois fait toujours 30 jours.
+**TODO** : Calculer son âge en jours et stocker le résultat dans la variable `age_in_day`. Pour faire simple, on ignore les années bissextiles et on considère qu'un mois fait toujours 30 jours, et donc qu'un an fait 360 jours.
 
 **Remarque** : 
 - Similairement à l'exercice 3, on utilise la fonction `scanf` pour demander la date de naissance et la date du jour à l'utilisateur lors de l'exécution. **/!\ Partie déjà implémenté pour vous**. À nouveau, nous vous conseillons d'observer / de jouer avec la syntaxe pour vous familiariser avec l'utilisation de `scanf` :
@@ -139,7 +138,7 @@ scanf("%d/%d/%d", &birth_day, &birth_month, &birth_year);  // Lecture de la date
 
 ## Exercice 7
 
-**TODO** : Convertir en jours, semaines, années le nombre de jours stocké dans la variable `nb_of_days` (dont la valeur est demandée à l'utilisateur avec la fonction `scanf`, similairement aux exercices précédents).
+**TODO** : Convertir en jours, semaines, années le nombre de jours stocké dans la variable `nb_of_days` (dont la valeur est demandée à l'utilisateur avec la fonction `scanf`, similairement aux exercices précédents). Vous pouvez considérer qu'un an fait toujours 365 jours.
 
 **Exemple** : Si l'utilisateur entre le nombre 2153, on veut afficher : 
 
