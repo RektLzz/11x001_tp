@@ -15,9 +15,11 @@ void exercice2(void){
     printf("\n\nEXERCICE 2\n\n");
     
     /******************** Votre code ci-dessous ********************/
-    printf("Nom     : Matthew O'DONNELL\n");
-    printf("Né le   : 28.05.2004\n");
-    printf("Contact : MatthewOdonnell@etu.unige.ch\n");
+    
+    printf("Nom     : Michel LAMBDA\n");
+    printf("Né le   : 31.10.2001\n");
+    printf("Contact : michel.lambda@unige.ch\n");
+
     /******************** Votre code ci-dessus *********************/
     
     return;
@@ -28,13 +30,15 @@ void exercice3(void) {
     printf("\n\nEXERCICE 3\n\n");
     
     /******************** Votre code ci-dessous ********************/
-    printf("#           #\n");
-    printf("# #       # #\n");
-    printf("#  #     #  #\n");
-    printf("#   #   #   #\n");
-    printf("#    # #    #\n");
-    printf("#     #     #\n");
-
+    
+    // Exemple de solution pour la lettre A :
+    printf("     #     \n");
+    printf("    # #    \n");
+    printf("   #   #   \n");
+    printf("  #######  \n");
+    printf(" #       # \n");
+    printf("#         #\n");
+    
     /******************** Votre code ci-dessus *********************/
 
     return;
@@ -45,13 +49,14 @@ void exercice4(void) {
     printf("\n\nEXERCICE 4\n\n");
 
     /******************** Votre code ci-dessous ********************/
-    char u = 'U', n = 'N', i = 'I', g = 'G', e = 'E';
+    
+    char c1 = 'U';
+    char c2 = 'N';
+    char c3 = 'I';
+    char c4 = 'G';
+    char c5 = 'E';
 
-    // À l'endroit
-    printf("%c%c%c%c%c\n", u, n, i, g, e);
-
-    // À l'envers
-    printf("%c%c%c%c%c\n", e, g, i, n, u);
+    printf("À l'envers, \"%c%c%c%c%c\" s'écrit \"%c%c%c%c%c\".\n", c1, c2, c3, c4, c5, c5, c4, c3, c2, c1);
 
     /******************** Votre code ci-dessus *********************/
     
@@ -70,8 +75,14 @@ void exercice5(void) {
     scanf("%f", &radius);
 
     /******************** Votre code ci-dessous ********************/
-    printf("Le périmètre du cercle est : 2 x PI x %f = %f\n", radius, 2 * PI * radius);
-    printf("L'aire du cercle est : PI x %f^2 = %f\n", radius, PI * radius * radius);
+    
+    float perimeter, area;
+
+    perimeter = 2 * PI * radius;
+    area = PI * radius * radius;
+    
+    printf("Un cercle de rayon %f m a un périmètre de %f m et une aire de %f m^2.\n", radius, perimeter, area);
+
     /******************** Votre code ci-dessus *********************/
 
     return;
@@ -98,11 +109,9 @@ void exercice6(void) {
     int age_in_day = 0;
 
     /******************** Votre code ci-dessous ********************/
-    int day_difference = today_day - birth_day;
-    int month_difference = today_month - birth_month;
-    int year_difference = today_year - birth_year;
-    
-    age_in_day = day_difference + 30 * month_difference + 12 * 30 * year_difference;
+
+    // Calculer l'âge en jour (on ignore les années bissextiles et on suppose que les mois font 30 jours)
+    age_in_day = (today_year - birth_year) * 360 + (today_month - birth_month) * 30 + (today_day - birth_day);
 
     /******************** Votre code ci-dessus *********************/
 
@@ -121,12 +130,14 @@ void exercice7(void) {
     scanf("%d", &nb_of_days);
    
     /******************** Votre code ci-dessous ********************/
-    int annee = nb_of_days / 365;
-    int jours_sans_les_annees = nb_of_days - (annee * 365);
-    int semaine = jours_sans_les_annees / 7;
-    int jour = jours_sans_les_annees % 7;
 
-    printf("\n%d jours font %d année(s), %d semaine(s) et %d jour(s).\n", nb_of_days, annee, semaine, jour);
+    int days, weeks, years;
+
+    years = nb_of_days / 365;
+    weeks = (nb_of_days % 365) / 7;
+    days = (nb_of_days - 365 * years - 7 * weeks);
+
+    printf("%d jours font %d année(s), %d semaine(s) et %d jour(s).\n", nb_of_days, years, weeks, days);
 
     /******************** Votre code ci-dessus *********************/
 
@@ -141,9 +152,9 @@ void exercice8(void) {
     float c;  
     
     /******************** Votre code ci-dessous ********************/
-
-    c = a / (float) b;
-
+    
+    c = a / (float) b; // Ne modifier que cette ligne
+    
     /******************** Votre code ci-dessus *********************/
     
     printf("%d / %d = %f \n", a, b, c);
@@ -177,24 +188,16 @@ void exercice9(void) {
 
 
     /******************** Votre code ci-dessous ********************/
-    int d, e, f;
 
-    // Vérifions le stockage utilisé par les 'int'
+    int d;
     int size_of_int = sizeof(d);
     printf("Le type 'int' utilise %d octets, c'est-à-dire %d bits.\n", size_of_int, 8 * size_of_int);
+    
+    d = pow(2, 8 * size_of_int - 1) - 1;
+    printf("Le plus grand entier de ce type est %d.\n", d);
 
-    /*  On remarque que le type int utilise 32 bits et donc à 2^32 valeurs possibles où puisque celui-ci accepte
-        les valeurs négatives, c'est de (-2^31) à (2^31 - 1). Pour créer un overflow, il suffit de faire :
-        (2^31 - 1) + 1 = 2^31 => -2^31 (car overflow le 1 et donc tous les bits sont des 0)
-    */ 
-
-    // Exemple d'overflow
-    d = 1; // 1
-    e = 2147483647; // 2^31 - 1
-    f = e + d; // 2^31 - 1 + 1 = 2^31 => -2^31
-    // En convertissant utilisant le complèment à deux, on obtient
-
-    printf("%d + %d = %d\n", d, e, f);
+    d++;
+    printf("En ajoutant 1, on constate un overflow car notre variable vaut maintenant %d.\n", d);
 
     /******************** Votre code ci-dessus *********************/
 
